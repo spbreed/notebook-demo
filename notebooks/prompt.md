@@ -1,51 +1,53 @@
-Generate a `diagrams.mingrammer.com` code snippet to create the following architecture diagram:
+Generate a 'diagrams.mingrammer.com' code snippet to create the following architecture diagram:
 
-## General Layout
-
----
+General Layout
 Design a detailed architecture diagram showcasing the entire AI lifecycle, with interconnected modules representing key stages and processes deployed in {target_cloud_provider}. The diagram should include the following elements:
 
+The architecture flow begins with Stage 0 (Internet & 3rd Party), which provides external inputs and connects to Stage 1 (Data Sources), where different types of data are collected and prepared for processing. The data flows into Stage 2 (Data Pipelines), where it is transformed and validated before being separated into Stage 3 (Data Sets) for training or retrieval purposes.
 
+Supporting these processes, Stage 4 (AI Inventory) manages metadata, model, and feature information. These datasets and inventory support Stage 5 (Training and Development), where models are trained and developed. The outputs from this stage are sent to Stage 6 (Serving and Inference) for deployment and monitoring.
 
-The archiecture flow begins with Stage 0 (Internet & 3rd Party), which provides external inputs and connects to Stage 1 (Data Sources), where different types of data are collected and prepared for processing. The data flows into Stage 2 (Data Pipelines), where it is transformed and validated before being separated into Stage 3 (Data Sets) for training or retrieval purposes. These datasets support Stage 5 (Training and Development), where models are trained and developed, and outputs are sent to Stage 6 (Serving and Inference) for deployment and monitoring.
+Next, Stage 7 (Multi-Agent Systems) handles routing, integration, and optimization, and is connected to Stage 6 (Serving and Inference). Finally, Stage 8 (AI Use Cases) is connected to Stage 6 (Serving and Inference), where the outcomes are applied across user, developer, and business domains. The stages are interconnected to ensure a seamless workflow across the AI lifecycle.
 
-Supporting these processes, Stage 4 (AI Inventory) manages metadata, model, and feature information, while Stage 7 (Multi-Agent Systems) handles routing, integration, and optimization thats connected to Stage 8. Finally, all processes contribute to Stage 8 (AI Use Cases), where the outcomes are applied across user, developer, and business domains. The stages are interconnected to ensure seamless workflow across the AI lifecycle.
+Diagram Requirements
+Important Guidelines:
 
-## Diagram Requirements
-- **Visual Features**:
-  - Clear labels for each stage.
-  - Directional arrows to show workflows
-  - Dont use any imports thats not listed in reference library section below
-  - Color-coded modules to distinguish stages
-  - donot import diagrams.generic.blank 
-  - strictly donot use from diagrams.aws.database import GenericDatabase
-  - Each node should be inside a cluster
-  - {ai_security_controls} is overarching across all the stages and foundational layer and represennt as a horizontal and foundational layer thats spans across the stages
-- **Layout**:
-  - Sequential yet interconnected representation of the AI lifecycle.
+Use only the import statements provided in the Reference Libraries section below. Do not use any other libraries or modules.
+Do not use arrays or lists to store multiple nodes in a cluster; define each node individually.
+Ensure all import statements are accurate and correspond exactly to the specified libraries. Do not confuse similar imports.
+Do not import diagrams.generic.blank.
+Do not import GenericDatabase
+Do not use from diagrams.aws.general import User.
+Do not use any aliases in the import statements.
 
-Represent {data_sources} in stage 1 datasoruces structured, semi-structured, and unstructured data. Show connections to external internet sources for models, software, and datasets, with tools like scanners (model, data, and license) assessing quality and compliance.
+Visual Features:
 
-{data_pipelines} in stage 2 are data pipelines Highlight transformations, validations, embeddings, and flow into the dataset stage. Include access control and anonymization mechanisms.
+Clear labels for each stage.
+Directional arrows to show workflows.
+Color-coded modules to distinguish stages.
+Each node should be inside a cluster.
+{ai_security_controls} is overarching across all the stages and foundational layer and should be represented as a horizontal and foundational layer.
+Layout:
 
-{data_sets} in stage 3 are datasets Separate training data and Retrieval-Augmented Generation (RAG) datasets, showing PII detection and redundancy mechanisms.
+Sequential yet interconnected representation of the AI lifecycle.
+Specific Stage Representations:
 
-{ai_inventory}: in stage 4 are AI inventory Illustrate components like data catalogs, model registries, and feature stores, supported by model governance and validation rules.
+Stage 1 (Data Sources): Represent {data_sources} as structured, semi-structured, and unstructured data. Show connections to external internet sources for models, software, and datasets, with tools like scanners (model, data, and license) assessing quality and compliance.
+Stage 2 (Data Pipelines): Represent {data_pipelines} highlighting transformations, validations, embeddings, and flow into the dataset stage. Include access control and anonymization mechanisms.
+Stage 3 (Data Sets): Represent {data_sets} separating training data and Retrieval-Augmented Generation (RAG) datasets, showing PII detection and redundancy mechanisms.
+Stage 4 (AI Inventory): Represent {ai_inventory} illustrating components like data catalogs, model registries, and feature stores, supported by model governance and validation rules.
+Stage 5 (Training and Development): Represent {ai_training_environment} covering supervised, unsupervised, reinforcement learning, LLM training, and adversarial models. Include external models and environment provisioning and model validation.
+Stage 6 (Serving and Inference): Represent {ai_deployment_platform} depicting model deployments of {model_type}, gateways, and monitoring systems.
+Stage 7 (Multi-Agent Systems): Represent {ai_agents} showing output grounding, agent routing, and prompt engineering. Include permissions, segregation of duties, and user feedback loops.
+Stage 8 (AI Use Cases): Represent {ai_usecases} separating areas into user productivity, developer productivity, and business use cases (e.g., chatbots, code generators, security tools, adaptive UX).
+Overall Presentation:
 
-{ai_training_environment}: in stage 5 training and development Cover supervised, unsupervised, reinforcement learning, LLM training, and adversarial models. Include external models and environment provisioning and model validation.
+Use clear labels and directional arrows for workflows.
+Use color-coding to distinguish stages, processes, and security layers.
+The layout should reflect the sequential yet interconnected nature of the AI lifecycle.
+Reference Libraries
+Strictly use only the following libraries for the diagram and do not use any others.
 
-{ai_deployment_platform} in stage 6 are servinga nd inference platforms that Depict model deployments of {model_type}, gateways, and monitoring systems.
-
-{ai_agents}: in stage 7 are multi agent systems Show output grounding, agent routing, and prompt engineering. Include permissions, segregation of duties, and user feedback loops.
-
-{ai_usecases}: in stage 8 are AI usecases Separate areas into user productivity, developer productivity, and business use cases (e.g., chatbots, code generators, security tools, adaptive UX).
-
-Use clear labels, directional arrows for workflows, and color-coding to distinguish stages, processes, and security layers. The layout should reflect the sequential yet interconnected nature of the AI lifecycle
-
----
-
-# reference Libraries
-Use the following libraries for the diagram:
 # AWS Analytics
 from diagrams.aws.analytics import AmazonOpensearchService, Analytics, Athena, CloudsearchSearchDocuments, Cloudsearch, DataLakeResource, DataPipeline, ElasticsearchService, EMRCluster, EMREngineMaprM3, EMREngineMaprM5, EMREngineMaprM7, EMREngine, EMRHdfsCluster, EMR, GlueCrawlers, GlueDataCatalog, Glue, KinesisDataAnalytics, KinesisDataFirehose, KinesisDataStreams, KinesisVideoStreams, Kinesis, LakeFormation, ManagedStreamingForKafka, Quicksight, RedshiftDenseComputeNode, RedshiftDenseStorageNode, Redshift
 
@@ -338,9 +340,6 @@ from diagrams.elastic.saas import Cloud, Elastic
 
 # Elastic Security
 from diagrams.elastic.security import Endpoint, Security, SIEM, Xdr
-
-# Generic Blank
-from diagrams.generic.blank import Blank
 
 # Generic Compute
 from diagrams.generic.compute import Rack
