@@ -1,8 +1,11 @@
 # Data Project Template
 
-<a target="_blank" href="https://datalumina.com/">
-    <img src="https://img.shields.io/badge/Datalumina-Project%20Template-2856f7" alt="Datalumina Project" />
-</a>
+# Install VS code and related dependencies
+- Documentation: [ClickUp Documentation](https://doc.clickup.com/9015213037/d/h/8cnjezd-17675/ddd52c673443975)
+- Youtube video: [VS Code Setup](https://www.youtube.com/watch?v=mpk4Q5feWaw&ab_channel=DaveEbbelaar)
+- Install dependencies: `pip install -r .\requirements.txt`
+- rename `/notebook-demo/.env.example` to  `/notebook-demo/.env`
+- Update OpenAPI key in .env
 
 ## Cookiecutter Data Science
 This project template is a simplified version of the [Cookiecutter Data Science](https://cookiecutter-data-science.drivendata.org) template, created to suit the needs of Datalumina and made available as a GitHub template.
